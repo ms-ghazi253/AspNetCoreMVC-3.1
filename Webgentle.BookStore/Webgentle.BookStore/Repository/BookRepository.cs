@@ -16,7 +16,7 @@ namespace Webgentle.BookStore.Repository
                 new BookModel(){Id=2 , Title="Dot Net Core",Author="karenly"},
                 new BookModel(){Id=3 , Title="MVC",Author="monika"},
                 new BookModel(){Id=4 , Title="php",Author="webgentle"},
-                new BookModel(){Id=5 , Title="F#",Author="webgentle"},
+                new BookModel(){Id=5 , Title="F#",Author="webgentle"}, 
             };
         }
         public List<BookModel> GetAllBooks()
