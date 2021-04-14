@@ -13,7 +13,8 @@ namespace Webgentle.BookStore.Controllers
             //var obj = new { id = 1, name = "Nitish" };
             //return View("AboutUs",obj);
 
-            return View("~TempView/NitishTemp.cshtml");
+            //return View("TempView/NitishTemp.cshtml");
+            return View();
         }
         public ViewResult AboutUs()
         {
