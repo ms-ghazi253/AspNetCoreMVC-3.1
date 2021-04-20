@@ -1,6 +1,5 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "_layout";
 }
 
 <!DOCTYPE html>
@@ -13,9 +12,10 @@
     <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <img src="~/image/Screenshot 2021-03-15 234817.jpg" alt="Logo" class="logo"/>
+    <img src="~/image/Screenshot 2021-03-15 234817.jpg" alt="Logo" class="logo" />
 
-    <h1 class="h1">welcome to book store aplication</h1>
+    <h1 class="h1">welcome to book store bookStore</h1>
+
     <h1>@DateTime.Now</h1>
     @{
         int a = 10;
@@ -29,7 +29,7 @@
     }
 
     @{
-        int v =7;
+        int v = 7;
     }
     @switch (v)
     {
@@ -46,20 +46,25 @@
         default:<h1>I am default</h1>
             break;
     }
-    @for(int i = 0; i < 10; i++)
-            {
-                <h1>welcom to book store application index @i</h1>
-            }
+    @for (int i = 0; i < 10; i++)
+    {
+        <h1>welcom to book store application index @i</h1>
+    }
 
-    @{ 
+    @{
         var list = new List<int>() { 1, 2, 3, 4, 5, 6 };
     }
 
-    @foreach(var item in list)
-            {
-                <h1>@item</h1>
-            }
+    @foreach (var item in list)
+    {
+        <h1>@item</h1>
+    }
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
 
+        });
+    </script>
 
 </body>
 </html>
