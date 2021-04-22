@@ -1,17 +1,32 @@
-﻿
+﻿@model IEnumerable<Webgentle.BookStore.Models.BookModel>
 @{
-    Layout = null;
+    Layout = "_layout";
 }
 
-<!DOCTYPE html>
+<div class="container">
+<h3 class="display-4">All books</h3>
+<div class="row">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>GetAllBooks</title>
-</head>
-<body>
-    <h2>All book List</h2>
-    <button>Click me </button>
-</body>
-</html>
+    @foreach (var book in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" style="width:100%; height:225px;" src="/image/360_F_375294645_YZ1qfcGxbLoLmLLVCCbIC1G8bOblM8Rk.jpg" />
+                <div class="card-body">
+                    <h3 class="card-title">@book.Title</h3>
+                    <p class="card-text"> @book.Discription</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">View details</a>
+                        </div>
+                        <small class="text-muted">@book.Author</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+</div>
+</div>

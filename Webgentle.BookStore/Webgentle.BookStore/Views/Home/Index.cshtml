@@ -1,70 +1,56 @@
 ﻿@{
     Layout = "_layout";
 }
+ 
+ 
 
-<!DOCTYPE html>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="h1"> welcom to Bookstore</h1>
+        <p class="lead text-muted">
+            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p href="#" class="btn btn-primary my-2">Search books</p>
+    </div>
+</section>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link href="~/css/Site.css" rel="stylesheet" />
-    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
-</head>
-<body>
-    <img src="~/image/Screenshot 2021-03-15 234817.jpg" alt="Logo" class="logo" />
-
-    <h1 class="h1">welcome to book store bookStore</h1>
-
-    <h1>@DateTime.Now</h1>
-    @{
-        int a = 10;
-        int b = 0;
-    }
-    <h1>Ternary - @(a==10 ? b=10 : b=5)</h1>
-    <h1>value of b = @b</h1>
-    @if (true)
-    {
-        <h1>hello if block</h1>
-    }
-
-    @{
-        int v = 7;
-    }
-    @switch (v)
-    {
-        case 1:<h1>I am 1</h1>
-            break;
-        case 2:<h1>I am 2</h1>
-            break;
-        case 3:<h1>I am 3</h1>
-            break;
-        case 4:<h1>I am 4</h1>
-            break;
-        case 5:<h1>I am 5</h1>
-            break;
-        default:<h1>I am default</h1>
-            break;
-    }
-    @for (int i = 0; i < 10; i++)
-    {
-        <h1>welcom to book store application index @i</h1>
-    }
-
-    @{
-        var list = new List<int>() { 1, 2, 3, 4, 5, 6 };
-    }
-
-    @foreach (var item in list)
-    {
-        <h1>@item</h1>
-    }
-    <script src="~/lib/jquery/jquery.js"></script>
-    <script>
-        $(document).ready(function () {
-
-        });
-    </script>
-
-</body>
-</html>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+        <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a short card.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
