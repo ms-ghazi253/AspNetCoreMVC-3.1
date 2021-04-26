@@ -12,7 +12,15 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\fahim\Desktop\ASP\AspNetCoreMVC-3.1\Webgentle.BookStore\Webgentle.BookStore\Views\_ViewImports.cshtml"
+using Webgentle.BookStore.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"63c3c6bce93ba6c8ce6f606722863cb0812dc87b", @"/Views/Home/ContactUs.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99ae2c26323b8e7c5aded475db2b6ae831fc30a6", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_ContactUs : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
