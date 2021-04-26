@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8cCTboZ7yTD26O19+8np9ekUgdFSQ3O93iGkxEajXj1KzXYige3vYzxOpe8AwbgWOqdwQTwVlNzwcql7ZKZaFQ==",
+  "dgSpecHash": "57y2KGS9nFwIlnrlpv58/VeRtL0yvGulS23gcpductcX0IIeqOr84g3M/4T0eow3sMtlvMWvhcSDzm3BNO19iw==",
   "success": true,
   "projectFilePath": "C:\\Users\\fahim\\Desktop\\ASP\\AspNetCoreMVC-3.1\\Webgentle.BookStore\\Webgentle.BookStore\\Webgentle.BookStore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\fahim\\.nuget\\packages\\dynamitey\\2.0.10.189\\dynamitey.2.0.10.189.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.5\\microsoft.aspnetcore.mvc.razor.extensions.3.1.5.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.5\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.5.nupkg.sha512",
@@ -16,6 +17,7 @@
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\3.3.1\\microsoft.codeanalysis.csharp.workspaces.3.3.1.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.codeanalysis.razor\\3.1.5\\microsoft.codeanalysis.razor.3.1.5.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\3.3.1\\microsoft.codeanalysis.workspaces.common.3.3.1.nupkg.sha512",
+    "C:\\Users\\fahim\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.0\\microsoft.extensions.dependencyinjection.3.1.0.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.0\\microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.5\\microsoft.extensions.dependencymodel.3.1.5.nupkg.sha512",
@@ -54,6 +56,7 @@
     "C:\\Users\\fahim\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\system.collections.immutable\\1.5.0\\system.collections.immutable.1.5.0.nupkg.sha512",
+    "C:\\Users\\fahim\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\system.composition\\1.0.31\\system.composition.1.0.31.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\system.composition.attributedmodel\\1.0.31\\system.composition.attributedmodel.1.0.31.nupkg.sha512",
     "C:\\Users\\fahim\\.nuget\\packages\\system.composition.convention\\1.0.31\\system.composition.convention.1.0.31.nupkg.sha512",

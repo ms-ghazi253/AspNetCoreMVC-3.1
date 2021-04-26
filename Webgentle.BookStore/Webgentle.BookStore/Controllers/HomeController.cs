@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Dynamic;
+using Dynamitey;
+using Webgentle.BookStore.Models;
 
 namespace Webgentle.BookStore.Controllers
 {
@@ -14,6 +17,15 @@ namespace Webgentle.BookStore.Controllers
             //return View("AboutUs",obj);
 
             //return View("TempView/NitishTemp.cshtml");
+
+          
+            ViewBag.Title = "webgentle";
+            dynamic Data = new ExpandoObject();
+            Data.Id = 1;
+            Data.Name = "mohammad";
+            ViewBag.Data = Data;
+            ViewBag.Type = new BookModel() { Id = 5, Author = "this is author " };
+
             return View();
         }
         public ViewResult AboutUs()
