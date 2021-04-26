@@ -12,11 +12,11 @@ namespace Webgentle.BookStore.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel(){Id=1 , Title="MVC",Author="NItish" , Discription="this is about MVCModel"},
-                new BookModel(){Id=2 , Title="Dot Net Core",Author="karenly" , Discription="this is a dotnet Core in iran "},
-                new BookModel(){Id=3 , Title="MVC",Author="monika" , Discription="what do you think about this?"},
-                new BookModel(){Id=4 , Title="php",Author="webgentle" , Discription="this is website for toturiaal "},
-                new BookModel(){Id=5 , Title="F#",Author="webgentle" , Discription="this is about F# toturial "}, 
+                new BookModel(){Id=1 , Title="MVC",Author="NItish" , Discription="this is about MVCModel", Category="Programming" , Language="English",TotalPage=1241},
+                new BookModel(){Id=2 , Title="Dot Net Core",Author="karenly" , Discription="this is a dotnet Core in iran ",Category="sport" , Language="Persian",TotalPage=152},
+                new BookModel(){Id=3 , Title="MVC",Author="monika" , Discription="what do you think about this?",Category="math" , Language="spanish",TotalPage=1122},
+                new BookModel(){Id=4 , Title="php",Author="webgentle" , Discription="this is website for toturiaal ",Category="fizisks" , Language="Rusion",TotalPage=1764},
+                new BookModel(){Id=5 , Title="F#",Author="webgentle" , Discription="this is about F# toturial " ,Category="sosial" , Language="Arabic",TotalPage=1844}, 
             };
         }
         public List<BookModel> GetAllBooks()
