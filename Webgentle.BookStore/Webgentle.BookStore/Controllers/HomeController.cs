@@ -18,14 +18,16 @@ namespace Webgentle.BookStore.Controllers
 
             //return View("TempView/NitishTemp.cshtml");
 
-          
-            ViewBag.Title = "webgentle";
-            dynamic Data = new ExpandoObject();
-            Data.Id = 1;
-            Data.Name = "mohammad";
-            ViewBag.Data = Data;
-            ViewBag.Type = new BookModel() { Id = 5, Author = "this is author " };
 
+            //ViewBag.Title = "webgentle";
+            //dynamic Data = new ExpandoObject();
+            //Data.Id = 1;
+            //Data.Name = "mohammad";
+            //ViewBag.Data = Data;
+            //ViewBag.Type = new BookModel() { Id = 5, Author = "this is author " };
+
+            ViewData["property1"] = "nitish kaushik";
+            ViewData["book"] = new BookModel() { Author = "nitish", Id = 1 };
             return View();
         }
         public ViewResult AboutUs()
