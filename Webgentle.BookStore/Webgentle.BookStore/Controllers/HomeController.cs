@@ -11,6 +11,12 @@ namespace Webgentle.BookStore.Controllers
 {
     public class HomeController : Controller
     {
+        [ViewData]
+        public string CustomPeroperty { get; set; }
+        [ViewData]
+        public string Title { get; set; }
+        [ViewData]
+        public BookModel book { get; set; }
         public ViewResult Index()
         {
             //var obj = new { id = 1, name = "Nitish" };
@@ -26,8 +32,13 @@ namespace Webgentle.BookStore.Controllers
             //ViewBag.Data = Data;
             //ViewBag.Type = new BookModel() { Id = 5, Author = "this is author " };
 
-            ViewData["property1"] = "nitish kaushik";
-            ViewData["book"] = new BookModel() { Author = "nitish", Id = 1 };
+            //ViewData["property1"] = "nitish kaushik";
+            //ViewData["book"] = new BookModel() { Author = "nitish", Id = 1 };
+
+            Title = "Home Page From Controller";
+            CustomPeroperty = "CustomValue";
+            book = new BookModel() { Id = 1, Title = "Asp.Net Core Tutorial " };
+
             return View();
         }
         public ViewResult AboutUs()

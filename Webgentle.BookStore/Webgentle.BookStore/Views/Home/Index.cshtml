@@ -5,13 +5,17 @@
 @*@{ 
     dynamic Data = ViewBag.Data;
 }*@
-@{ 
+@*@{ 
     ViewData["Title"] = "Home";
+}*@
+@{ 
+    var book = ViewData["Book"] as BookModel;
 }
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="h1"> welcom to Bookstore @*@ViewBag.Title*@  @ViewData["property1"]</h1>
-       
+        <h1 class="h1"> welcom to Bookstore @*@ViewBag.Title*@  @*@ViewData["property1"]*@ @ViewData["CustomPeroperty"]</h1>
+       <h1 class="h1">Id=@book.Id</h1>
+       <h1 class="h1">Title=@book.Title</h1>
         <p class="lead text-muted">
             @*@Data.Id @Data.Name<br />
             id= @ViewBag.Type.Id<br />
