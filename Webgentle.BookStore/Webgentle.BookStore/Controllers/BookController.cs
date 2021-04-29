@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Webgentle.BookStore.Models;
@@ -21,9 +22,12 @@ namespace Webgentle.BookStore.Controllers
             var data= _bookRepository.GetAllBooks() ;
             return View(data);
         }
-        public ViewResult GetBook(int id)
+        public ViewResult GetBook(int id , string nameofbook)
         {
-            var data = _bookRepository.GetBookById(id);
+            dynamic data = new ExpandoObject();
+
+           data.book = _bookRepository.GetBookById(id);
+            data.Name = "mohammad";
             return View(data);
         }
         public List<BookModel> SearchBooks(string bookName, string authorName)
