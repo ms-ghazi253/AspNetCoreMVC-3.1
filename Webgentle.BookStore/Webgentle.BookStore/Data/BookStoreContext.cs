@@ -15,7 +15,6 @@ namespace Webgentle.BookStore.Data
         public DbSet<Books> Books { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=BookStore;integrated Security=True;");
             base.OnConfiguring(optionsBuilder);
         }
     }
