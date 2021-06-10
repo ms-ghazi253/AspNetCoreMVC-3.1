@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@using Webgentle.BookStore.Enums
 @{
     ViewData["Title"] = "Add New Book";
 }
@@ -21,15 +22,15 @@
     <form method="post" asp-action="AddNewBook" asp-controller="Book">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Language"></label>
-            <select asp-for="Language" class="form-control" required asp-items="ViewBag.language">
-                @*<option value="">Please choose book language</option>
-                <option value="persion">persion(one of the bet language)</option>
+            <label asp-for="LanguageId"></label>
+            <select asp-for="LanguageId" class="form-control" required asp-items="ViewBag.Languages">
+                <option value="" >Please choose book language</option>
+                @*<option value="persion">persion(one of the bet language)</option>
                 <option value="English" >English(Global language)</option>
                 <option value="Arabic">Arabic(My Custom message</option>*@
             </select>
             
-            <span asp-validation-for="Language" class="text-danger"></span>
+            <span asp-validation-for="LanguageId" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="MyField"></label>

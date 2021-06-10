@@ -26,6 +26,7 @@ namespace Webgentle.BookStore
             services.AddDbContext<BookStoreContext>(options => options.UseSqlServer(connectionString));
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddScoped<BookRepository , BookRepository >();
+            services.AddScoped<LanguageRepository, LanguageRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
