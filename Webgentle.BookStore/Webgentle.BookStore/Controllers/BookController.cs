@@ -22,7 +22,7 @@ namespace Webgentle.BookStore.Controllers
 
         public async Task<ViewResult>GetAllBooks()
         {
-            var data= await _bookRepository.GetAllBooks() ;
+            var data= await _bookRepository.GetAllBooks () ;
             return View(data);
         }
         //public ViewResult GetBook(int id , string nameofbook)

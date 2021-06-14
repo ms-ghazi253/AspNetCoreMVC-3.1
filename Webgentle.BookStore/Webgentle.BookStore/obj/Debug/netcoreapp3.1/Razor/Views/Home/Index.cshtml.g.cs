@@ -30,6 +30,27 @@ using Webgentle.BookStore.Data;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d901b5c2680460962f2b145d751ed35eedfd12b", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
+        #line hidden
+        #pragma warning disable 0649
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
+        #pragma warning restore 0649
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner __tagHelperRunner = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner();
+        #pragma warning disable 0169
+        private string __tagHelperStringValueBuffer;
+        #pragma warning restore 0169
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __backed__tagHelperScopeManager = null;
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __tagHelperScopeManager
+        {
+            get
+            {
+                if (__backed__tagHelperScopeManager == null)
+                {
+                    __backed__tagHelperScopeManager = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager(StartTagHelperWritingScope, EndTagHelperWritingScope);
+                }
+                return __backed__tagHelperScopeManager;
+            }
+        }
+        private global::Webgentle.BookStore.Helper.BigTagHelper __Webgentle_BookStore_Helper_BigTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -77,15 +98,28 @@ using Webgentle.BookStore.Data;
 
 <div class=""container"">
     
-    <big>Top books</big>
+    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("big", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d4378030ded53401b89388df06928ed4d60f0775373", async() => {
+                WriteLiteral("Top books");
+            }
+            );
+            __Webgentle_BookStore_Helper_BigTagHelper = CreateTagHelper<global::Webgentle.BookStore.Helper.BigTagHelper>();
+            __tagHelperExecutionContext.Add(__Webgentle_BookStore_Helper_BigTagHelper);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral(@"
     <p big>Top book using attribute</p>
     <div class=""row row-cols-1 row-cols-md-3 g-4 "">
         <div class=""col"">
             <div class=""card h-100"">
                 <img src=""..."" class=""card-img-top"" alt=""..."">
                 <div class=""card-body"">
-         ");
-            WriteLiteral(@"           <h5 class=""card-title"">Card title</h5>
+                    <h5 class=""card-title"">Card title</h5>
                     <p class=""card-text"">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
             </div>
@@ -101,12 +135,12 @@ using Webgentle.BookStore.Data;
         </div>
         <div class=""col"">
             <div class=""card h-100"">
-                <img src=""..."" class=""card-img-top"" alt=""..."">
+                <img src=""..."" class=""c");
+            WriteLiteral(@"ard-img-top"" alt=""..."">
                 <div class=""card-body"">
                     <h5 class=""card-title"">Card title</h5>
                     <p class=""card-text"">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          ");
-            WriteLiteral(@"      </div>
+                </div>
             </div>
         </div>
         <div class=""col"">
