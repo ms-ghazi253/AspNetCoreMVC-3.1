@@ -83,7 +83,8 @@ namespace Webgentle.BookStore.Controllers
                 if(bookModel.CoverPhoto != null)
                 {
                     string folder = "books/cover/";
-                    folder += Guid.NewGuid().ToString() + "_" + bookModel.CoverPhoto.FileName; 
+                    folder += Guid.NewGuid().ToString() + "_" + bookModel.CoverPhoto.FileName;
+                    bookModel.CoverImageUrl = folder;
                     string ServerFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
                  await   bookModel.CoverPhoto.CopyToAsync(new FileStream(ServerFolder, FileMode.Create)) ;
                 }

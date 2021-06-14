@@ -31,13 +31,14 @@ namespace Webgentle.BookStore.Repository
         {
             var newBook = new Books()
             {
-                Author=model.Author,
-                CreatedOn=DateTime.UtcNow,
-                Description=model.Discription,
+                Author = model.Author,
+                CreatedOn = DateTime.UtcNow,
+                Description = model.Discription,
                 Title = model.Title,
-                LanguageId=model.LanguageId,
+                LanguageId = model.LanguageId,
                 TotalPages = model.TotalPage,
-                UpdatedOn = DateTime.UtcNow
+                UpdatedOn = DateTime.UtcNow,
+                CoverImageUrl = model.CoverImageUrl
             };
 
            await _context.Books.AddAsync(newBook);
@@ -59,9 +60,10 @@ namespace Webgentle.BookStore.Repository
                         Discription = book.Description,
                         Id = book.Id,
                         LanguageId = book.LanguageId,
-                        Language= book.Language.Name,
-                        Title = book.Title, 
-                        TotalPage = book.TotalPages
+                        Language = book.Language.Name,
+                        Title = book.Title,
+                        TotalPage = book.TotalPages,
+                        CoverImageUrl = book.CoverImageUrl
                     }) ;
                 }
             }
@@ -78,7 +80,8 @@ namespace Webgentle.BookStore.Repository
                 LanguageId = book.LanguageId,
                 Language = book.Language.Name,
                 Title = book.Title,
-                TotalPage = book.TotalPages
+                TotalPage = book.TotalPages,
+                CoverImageUrl=book.CoverImageUrl
             }).FirstOrDefaultAsync();
 
            
