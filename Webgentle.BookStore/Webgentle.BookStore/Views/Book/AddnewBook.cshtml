@@ -19,17 +19,17 @@
     </div> 
         }
             
-    <form method="post" asp-action="AddNewBook" asp-controller="Book">
+    <form method="post" enctype="multipart/form-data" asp-action="AddNewBook" asp-controller="Book">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="LanguageId"></label>
             <select asp-for="LanguageId" class="form-control" required asp-items="ViewBag.Languages">
-                <option value="" >Please choose book language</option>
+                <option value="">Please choose book language</option>
                 @*<option value="persion">persion(one of the bet language)</option>
                 <option value="English" >English(Global language)</option>
                 <option value="Arabic">Arabic(My Custom message</option>*@
             </select>
-            
+
             <span asp-validation-for="LanguageId" class="text-danger"></span>
         </div>
         <div class="form-group">
@@ -56,6 +56,14 @@
             <label asp-for="TotalPage"></label>
             <input asp-for="TotalPage " class="form-control" />
             <span asp-validation-for="TotalPage" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CoverPhoto"></label>
+            <div class="custom-file">
+                <input asp-for="CoverPhoto" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <span asp-validation-for="CoverPhoto" class="text-danger"></span>
         </div>
         <div class="form-group">
             <input type="submit" value="Add book" class="btn btn-primary" />

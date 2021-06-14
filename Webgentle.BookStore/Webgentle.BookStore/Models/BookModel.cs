@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Webgentle.BookStore.Enums;
 using Webgentle.BookStore.Helper;
+using Microsoft.AspNetCore.Http;
 
 namespace Webgentle.BookStore.Models
 {
@@ -20,7 +21,7 @@ namespace Webgentle.BookStore.Models
         
         public string Author { get; set; }
         [Required(ErrorMessage = "Please enter the author name")]
-        [MyCustomValidation(Text = "Azure")]
+        //[MyCustomValidation(Text = "Azure")]
         public string Title { get; set; }
         [StringLength(500)]
         public string Discription { get; set; }
@@ -33,5 +34,9 @@ namespace Webgentle.BookStore.Models
         [Required(ErrorMessage = "Please enter the total pages")]
         [Display(Name="Total pages of book")]
         public int TotalPage { get; set; }
+        [Display(Name="Choose the cover photo of your book")]
+        [Required]
+        public IFormFile CoverPhoto { get; set; }
+
     }
 }
