@@ -36,6 +36,7 @@ namespace Webgentle.BookStore.Repository
                 Description = model.Discription,
                 Title = model.Title,
                 LanguageId = model.LanguageId,
+               
                 TotalPages = model.TotalPage,
                 UpdatedOn = DateTime.UtcNow,
                 CoverImageUrl = model.CoverImageUrl
@@ -48,7 +49,7 @@ namespace Webgentle.BookStore.Repository
         public async Task<List<BookModel>> GetAllBooks()
         {
             var books = new List<BookModel>();
-            var allbooks = await _context.Books.ToListAsync();
+            var allbooks = await _context.Books.Include(b => b.Language).ToListAsync();
             if (allbooks?.Any() == true)
             {
                 foreach(var book in allbooks)

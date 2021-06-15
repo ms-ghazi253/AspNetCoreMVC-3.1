@@ -16,9 +16,9 @@ namespace Webgentle.BookStore.Controllers
     {
         private readonly BookRepository _bookRepository = null;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly LanguageRepository _languageRepository= null;
-        public BookController(BookRepository bookRepository ,
-            LanguageRepository languageRepository , 
+        private readonly LanguageRepository _languageRepository = null;
+        public BookController(BookRepository bookRepository,
+            LanguageRepository languageRepository,
             IWebHostEnvironment webHostEnvironment)
         {
             _languageRepository = languageRepository;
@@ -26,9 +26,9 @@ namespace Webgentle.BookStore.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public async Task<ViewResult>GetAllBooks()
+        public async Task<ViewResult> GetAllBooks()
         {
-            var data= await _bookRepository.GetAllBooks () ;
+            var data = await _bookRepository.GetAllBooks();
             return View(data);
         }
         //public ViewResult GetBook(int id , string nameofbook)
@@ -39,7 +39,7 @@ namespace Webgentle.BookStore.Controllers
         //    data.Name = "mohammad";
         //    return View(data);
         //}
-        [Route("book-Details/{id}" , Name="bookDetailsRoute")]
+        [Route("book-Details/{id}", Name = "bookDetailsRoute")]
         public async Task<ViewResult> GetBook(int id)
         {
             var data = await _bookRepository.GetBookById(id);
@@ -49,13 +49,13 @@ namespace Webgentle.BookStore.Controllers
         {
             return _bookRepository.SearchBook(bookName, authorName);
         }
-        public async Task<ViewResult> AddnewBook(bool isSuccess=false , int bookId=0)
+        public async Task<ViewResult> AddnewBook(bool isSuccess = false, int bookId = 0)
         {
             var model = new BookModel()
             {
                 //Language = "2"
             };
-            ViewBag.Languages = new SelectList( await _languageRepository.GetLanguages(),"Id" , "Name");
+            ViewBag.Languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
             //var Group1 = new SelectListGroup() { Name = "Group 1" };
             //var Group2 = new SelectListGroup() { Name = "Group 2" };
             //var Group3 = new SelectListGroup() { Name = "Group 3" };
@@ -73,20 +73,20 @@ namespace Webgentle.BookStore.Controllers
             //};
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
-            return View(model); 
+            return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> AddnewBook(BookModel bookModel)
         {
             if (ModelState.IsValid)
             {
-                if(bookModel.CoverPhoto != null)
+                if (bookModel.CoverPhoto != null)
                 {
                     string folder = "books/cover/";
                     folder += Guid.NewGuid().ToString() + "_" + bookModel.CoverPhoto.FileName;
-                    bookModel.CoverImageUrl = folder;
+                    bookModel.CoverImageUrl = "/" + folder;
                     string ServerFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
-                 await   bookModel.CoverPhoto.CopyToAsync(new FileStream(ServerFolder, FileMode.Create)) ;
+                    await bookModel.CoverPhoto.CopyToAsync(new FileStream(ServerFolder, FileMode.Create));
                 }
                 int id = await _bookRepository.AddnewBook(bookModel);
                 if (id > 0)
