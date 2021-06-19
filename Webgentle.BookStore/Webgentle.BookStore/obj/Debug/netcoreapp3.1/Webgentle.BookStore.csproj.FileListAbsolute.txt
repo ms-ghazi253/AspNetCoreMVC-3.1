@@ -441,3 +441,4 @@ C:\Users\fahim\Desktop\ASP\AspNetCoreMVC-3.1\Webgentle.BookStore\Webgentle.BookS
 C:\Users\fahim\Desktop\ASP\AspNetCoreMVC-3.1\Webgentle.BookStore\Webgentle.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_header.cshtml.g.cs
 C:\Users\fahim\Desktop\ASP\AspNetCoreMVC-3.1\Webgentle.BookStore\Webgentle.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_footer.cshtml.g.cs
 C:\Users\fahim\Desktop\ASP\AspNetCoreMVC-3.1\Webgentle.BookStore\Webgentle.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_bookthumbnail.cshtml.g.cs
+C:\Users\fahim\Desktop\ASP\AspNetCoreMVC-3.1\Webgentle.BookStore\Webgentle.BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\TopBooks\Default.cshtml.g.cs
