@@ -9,48 +9,14 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light thead-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">BookStore</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" asp-controller="home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="home" asp-action="AboutUs">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="home" asp-action="ContactUs">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Book" asp-action="GetAllBooks">All Books</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-protocol="http" asp-host="webgentle.com" asp-controller="Book" asp-action="GetAllBooks">New Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Book" asp-action="AddnewBook">all new Books</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <partial name="_header" />
+    
+    @RenderSection("breadcrumb", required: false)
     <main role="main">
         @RenderBody()
     </main>
 
-    <footer class="border-top footer text-muted text-center ">
-        <div class="container">
-            CopyRight  &copy; Book Store @DateTime.Now.Year
-            <a href="mailto:ms.ghazi253@gmail.com"></a>
-            <custom-email asp-for=""></custom-email>
-        </div>
-    </footer>
+    <partial name="_footer" />
     <environment include="Development">
         <script src="~/lib/jquery/jquery.js"></script>
         <script src="~/jquery-validate/jquery.validate.js"></script>
