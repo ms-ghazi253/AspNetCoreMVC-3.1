@@ -6,6 +6,7 @@ using Webgentle.BookStore.Data;
 using Webgentle.BookStore.Models;
 using Webgentle.BookStore.Controllers;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 
 namespace Webgentle.BookStore.Repository
 {
@@ -36,11 +37,20 @@ namespace Webgentle.BookStore.Repository
                 Description = model.Discription,
                 Title = model.Title,
                 LanguageId = model.LanguageId,
-               
                 TotalPages = model.TotalPage,
                 UpdatedOn = DateTime.UtcNow,
-                CoverImageUrl = model.CoverImageUrl
+                CoverImageUrl = model.CoverImageUrl,
+                BookPdfUrl=model.BookPdfUrl
             };
+            newBook.bookGallery = new List<BookGallery>();
+            foreach(var file in model.Gallery)
+            {
+                newBook.bookGallery.Add(new BookGallery()
+                {
+                    Name = file.Name,
+                    URL = file.URL
+                });
+            }
 
            await _context.Books.AddAsync(newBook);
             await _context.SaveChangesAsync();
@@ -72,7 +82,7 @@ namespace Webgentle.BookStore.Repository
         }
         public async Task<BookModel>GetBookById (int id)
         {
-            return await _context.Books.Where(x=>x.Id==id).Select(book=> new BookModel()
+            return await _context.Books.Where(x => x.Id == id).Select(book => new BookModel()
             {
                 Author = book.Author,
                 Category = book.Category,
@@ -82,7 +92,14 @@ namespace Webgentle.BookStore.Repository
                 Language = book.Language.Name,
                 Title = book.Title,
                 TotalPage = book.TotalPages,
-                CoverImageUrl=book.CoverImageUrl
+                CoverImageUrl = book.CoverImageUrl,
+                Gallery = book.bookGallery.Select(g => new GalleryModel()
+                {
+                    Id = g.Id,
+                    Name = g.Name,
+                    URL = g.URL
+                }).ToList(),
+                BookPdfUrl=book.BookPdfUrl
             }).FirstOrDefaultAsync();
 
            
