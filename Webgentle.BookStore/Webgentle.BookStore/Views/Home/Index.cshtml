@@ -30,33 +30,11 @@
     
     <big>Top books</big>
     <p big>Top book using attribute</p>
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+    @*<div class="row row-cols-1 row-cols-md-3 g-4 ">
+    </div>*@
 
-        @*@await Component.InvokeAsync("TopBooks")*@
-        <vc:top-books></vc:top-books>
-        <div class="col">
-           @*<partial name="_bookThumbnail" model="new BookModel()" />*@
-            @Html.Partial("_bookThumbnail" , new BookModel())
-        </div>
-        <div class="col">
-            @*<partial name="_bookThumbnail" model="new BookModel()" />*@
-            @await Html.PartialAsync("_bookThumbnail", new BookModel())
-        </div>
-        <div class="col">
-            @*<partial name="_bookThumbnail" model="new BookModel()" />*@
-            @{
-                 Html.RenderPartial("_bookThumbnail", new BookModel());
-
-            }
-        </div>
-        <div class="col">
-            @*<partial name="_bookThumbnail" model="new BookModel()" />*@
-            @{
-               await Html.RenderPartialAsync("_bookThumbnail", new BookModel());
-
-            }
-        </div>
-    </div>
+           <vc:top-books></vc:top-books>
+  
 </div>
 @section Scripts{ 
     <script>
