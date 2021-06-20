@@ -32,8 +32,8 @@
     <p big>Top book using attribute</p>
     @*<div class="row row-cols-1 row-cols-md-3 g-4 ">
     </div>*@
-
-           <vc:top-books></vc:top-books>
+    @await Component.InvokeAsync("TopBooks",new  { count=3})
+           @*<vc:top-books count="3"></vc:top-books>*@
   
 </div>
 @section Scripts{ 
