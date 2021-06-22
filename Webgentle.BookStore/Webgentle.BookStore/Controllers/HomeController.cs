@@ -9,14 +9,18 @@ using Webgentle.BookStore.Models;
 
 namespace Webgentle.BookStore.Controllers
 {
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
+    
         [ViewData]
         public string CustomPeroperty { get; set; }
         [ViewData]
         public string Title { get; set; }
         [ViewData]
         public BookModel book { get; set; }
+        [Route("~/")]
+      
         public ViewResult Index()
         {
             //var obj = new { id = 1, name = "Nitish" };
@@ -35,19 +39,25 @@ namespace Webgentle.BookStore.Controllers
             //ViewData["property1"] = "nitish kaushik";
             //ViewData["book"] = new BookModel() { Author = "nitish", Id = 1 };
 
-            Title = "Home Page From Controller";
-            CustomPeroperty = "CustomValue";
-            book = new BookModel() { Id = 1, Title = "Asp.Net Core Tutorial " };
+            //Title = "Home Page From Controller";
+            //CustomPeroperty = "CustomValue";
+            //book = new BookModel() { Id = 1, Title = "Asp.Net Core Tutorial " };
+
+
 
             return View();
         }
+   
         public ViewResult AboutUs()
         {
             return View();
         }
+   
         public ViewResult ContactUs()
         {
             return View();
         }
     }
+
+
 }

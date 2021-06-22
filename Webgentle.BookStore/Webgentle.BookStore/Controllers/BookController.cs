@@ -13,6 +13,7 @@ using Webgentle.BookStore.Repository;
 
 namespace Webgentle.BookStore.Controllers
 {
+    [Route("[controller]/[action]")]
     public class BookController : Controller
     {
         private readonly BookRepository _bookRepository = null;
@@ -26,7 +27,7 @@ namespace Webgentle.BookStore.Controllers
             _bookRepository = bookRepository;
             _webHostEnvironment = webHostEnvironment;
         }
-
+        [Route("~/all-books")]
         public async Task<ViewResult> GetAllBooks()
         {
             var data = await _bookRepository.GetAllBooks();
@@ -40,7 +41,7 @@ namespace Webgentle.BookStore.Controllers
         //    data.Name = "mohammad";
         //    return View(data);
         //}
-        [Route("book-Details/{id}", Name = "bookDetailsRoute")]
+        [Route("~/book-Details/{id}", Name = "bookDetailsRoute")]
         public async Task<ViewResult> GetBook(int id)
         {
             var data = await _bookRepository.GetBookById(id);
