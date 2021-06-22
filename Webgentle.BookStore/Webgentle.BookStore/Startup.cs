@@ -29,8 +29,8 @@ namespace Webgentle.BookStore
             //    option.HtmlHelperOptions.ClientValidationEnabled = false;
             //});
             services.AddRazorPages().AddRazorRuntimeCompilation();
-            services.AddScoped<BookRepository , BookRepository >();
-            services.AddScoped<LanguageRepository, LanguageRepository>();
+            services.AddScoped <IBookRepository , BookRepository >();
+            services.AddScoped<ILanguageRepository, LanguageRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

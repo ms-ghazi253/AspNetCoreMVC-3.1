@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace Webgentle.BookStore.Repository
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
     {
         //private List<BookModel> DataSource()
         //{
@@ -23,7 +23,7 @@ namespace Webgentle.BookStore.Repository
         //        new BookModel(){Id=5 , Title="F#",Author="webgentle" , Discription="this is about F# toturial " ,Category="sosial" , Language="Arabic",TotalPage=1844}, 
         //    };
         //}
-        private readonly BookStoreContext _context = null; 
+        private readonly BookStoreContext _context = null;
         public BookRepository(BookStoreContext context)
         {
             _context = context;
@@ -40,10 +40,10 @@ namespace Webgentle.BookStore.Repository
                 TotalPages = model.TotalPage,
                 UpdatedOn = DateTime.UtcNow,
                 CoverImageUrl = model.CoverImageUrl,
-                BookPdfUrl=model.BookPdfUrl
+                BookPdfUrl = model.BookPdfUrl
             };
             newBook.bookGallery = new List<BookGallery>();
-            foreach(var file in model.Gallery)
+            foreach (var file in model.Gallery)
             {
                 newBook.bookGallery.Add(new BookGallery()
                 {
@@ -52,7 +52,7 @@ namespace Webgentle.BookStore.Repository
                 });
             }
 
-           await _context.Books.AddAsync(newBook);
+            await _context.Books.AddAsync(newBook);
             await _context.SaveChangesAsync();
             return newBook.Id;
         }
@@ -62,7 +62,7 @@ namespace Webgentle.BookStore.Repository
             var allbooks = await _context.Books.Include(b => b.Language).ToListAsync();
             if (allbooks?.Any() == true)
             {
-                foreach(var book in allbooks)
+                foreach (var book in allbooks)
                 {
                     books.Add(new BookModel()
                     {
@@ -75,28 +75,28 @@ namespace Webgentle.BookStore.Repository
                         Title = book.Title,
                         TotalPage = book.TotalPages,
                         CoverImageUrl = book.CoverImageUrl
-                    }) ;
+                    });
                 }
             }
-            return books; 
+            return books;
         }
         public async Task<List<BookModel>> GetTopBooksAsync(int count)
         {
-           return await _context.Books.Select(book=> new BookModel()
-                    {
-                        Author = book.Author,
-                        Category = book.Category,
-                        Discription = book.Description,
-                        Id = book.Id,
-                        LanguageId = book.LanguageId,
-                        Language = book.Language.Name,
-                        Title = book.Title,
-                        TotalPage = book.TotalPages,
-                        CoverImageUrl = book.CoverImageUrl
-                    }).Take(count).ToListAsync();   
-              
+            return await _context.Books.Select(book => new BookModel()
+            {
+                Author = book.Author,
+                Category = book.Category,
+                Discription = book.Description,
+                Id = book.Id,
+                LanguageId = book.LanguageId,
+                Language = book.Language.Name,
+                Title = book.Title,
+                TotalPage = book.TotalPages,
+                CoverImageUrl = book.CoverImageUrl
+            }).Take(count).ToListAsync();
+
         }
-        public async Task<BookModel>GetBookById (int id)
+        public async Task<BookModel> GetBookById(int id)
         {
             return await _context.Books.Where(x => x.Id == id).Select(book => new BookModel()
             {
@@ -115,17 +115,17 @@ namespace Webgentle.BookStore.Repository
                     Name = g.Name,
                     URL = g.URL
                 }).ToList(),
-                BookPdfUrl=book.BookPdfUrl
+                BookPdfUrl = book.BookPdfUrl
             }).FirstOrDefaultAsync();
 
-           
-           
 
-        } 
-        public List<BookModel> SearchBook(string title , string authorName)
+
+
+        }
+        public List<BookModel> SearchBook(string title, string authorName)
         {
             return null;
         }
-      
+
     }
 }

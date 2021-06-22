@@ -16,11 +16,11 @@ namespace Webgentle.BookStore.Controllers
     [Route("[controller]/[action]")]
     public class BookController : Controller
     {
-        private readonly BookRepository _bookRepository = null;
+        private readonly IBookRepository _bookRepository = null;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly LanguageRepository _languageRepository = null;
-        public BookController(BookRepository bookRepository,
-            LanguageRepository languageRepository,
+        private readonly ILanguageRepository _languageRepository = null;
+        public BookController(IBookRepository bookRepository,
+            ILanguageRepository languageRepository,
             IWebHostEnvironment webHostEnvironment)
         {
             _languageRepository = languageRepository;
@@ -46,7 +46,7 @@ namespace Webgentle.BookStore.Controllers
         {
             var data = await _bookRepository.GetBookById(id);
             return View(data);
-        }
+        } 
         public List<BookModel> SearchBooks(string bookName, string authorName)
         {
             return _bookRepository.SearchBook(bookName, authorName);
