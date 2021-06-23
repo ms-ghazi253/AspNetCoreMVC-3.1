@@ -46,7 +46,7 @@ namespace Webgentle.BookStore.Controllers
         {
             var data = await _bookRepository.GetBookById(id);
             return View(data);
-        } 
+        }
         public List<BookModel> SearchBooks(string bookName, string authorName)
         {
             return _bookRepository.SearchBook(bookName, authorName);
@@ -57,7 +57,7 @@ namespace Webgentle.BookStore.Controllers
             {
                 //Language = "2"
             };
-            ViewBag.Languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
+            //ViewBag.Languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
             //var Group1 = new SelectListGroup() { Name = "Group 1" };
             //var Group2 = new SelectListGroup() { Name = "Group 2" };
             //var Group3 = new SelectListGroup() { Name = "Group 3" };
@@ -73,6 +73,7 @@ namespace Webgentle.BookStore.Controllers
             //       new SelectListItem(){Text = "Tamil" , Value="8" , Group=Group3},
             //        new SelectListItem(){Text = "Spanish" , Value="9" , Group=Group3},
             //};
+
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
             return View(model);
@@ -85,24 +86,24 @@ namespace Webgentle.BookStore.Controllers
                 if (bookModel.CoverPhoto != null)
                 {
                     string folder = "books/cover/";
-                    bookModel.CoverImageUrl=await UploadImage(folder, bookModel.CoverPhoto);
+                    bookModel.CoverImageUrl = await UploadImage(folder, bookModel.CoverPhoto);
                 }
                 if (bookModel.GalleryFile != null)
                 {
                     string folder = "books/gallery/";
                     bookModel.Gallery = new List<GalleryModel>();
 
-                    foreach(var file in bookModel.GalleryFile)
+                    foreach (var file in bookModel.GalleryFile)
                     {
                         var gallery = new GalleryModel()
                         {
-                            Name=file.FileName,
+                            Name = file.FileName,
                             URL = await UploadImage(folder, file)
 
-                    };
-                        bookModel.Gallery.Add(gallery);   
+                        };
+                        bookModel.Gallery.Add(gallery);
                     }
-                    
+
                 }
                 if (bookModel.BookPdf != null)
                 {
@@ -115,16 +116,18 @@ namespace Webgentle.BookStore.Controllers
                     return RedirectToAction(nameof(AddnewBook), new { isSuccess = true, bookId = id });
                 }
             }
-            ViewBag.Languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
+
+            //ViewBag.Languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
             //ViewBag.language = new SelectList(GetLanguage(), "Id", "Text");
+
             ModelState.AddModelError("", "this is my custom error message");
             return View();
         }
 
-        private async Task<string> UploadImage(string folderPath,IFormFile file)
+        private async Task<string> UploadImage(string folderPath, IFormFile file)
         {
             folderPath += Guid.NewGuid().ToString() + "_" + file.FileName;
-            
+
             string ServerFolder = Path.Combine(_webHostEnvironment.WebRootPath, folderPath);
             await file.CopyToAsync(new FileStream(ServerFolder, FileMode.Create));
             return "/" + folderPath;

@@ -14,7 +14,7 @@ namespace Webgentle.BookStore.Components
         {
           _bookRepository = bookRepository;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int count)
+        public async Task<IViewComponentResult> InvokeAsync(int count)   
         {
             var books = await _bookRepository.GetTopBooksAsync(count);
             return View(books);

@@ -122,6 +122,10 @@ namespace Webgentle.BookStore.Repository
 
 
         }
+        public string GetAppName()
+        {
+            return "Book Store application";
+        }
         public List<BookModel> SearchBook(string title, string authorName)
         {
             return null;
