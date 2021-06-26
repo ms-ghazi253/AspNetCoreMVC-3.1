@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 using System.Dynamic;
 using Dynamitey;
 using Webgentle.BookStore.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace Webgentle.BookStore.Controllers
 {
+   
     [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
-    
+        private readonly IConfiguration configuration;
+
+        public HomeController(IConfiguration _configuration)
+        {
+            configuration = _configuration;
+        }
         [ViewData]
         public string CustomPeroperty { get; set; }
         [ViewData]
@@ -43,8 +50,10 @@ namespace Webgentle.BookStore.Controllers
             //CustomPeroperty = "CustomValue";
             //book = new BookModel() { Id = 1, Title = "Asp.Net Core Tutorial " };
 
-
-
+            var result = configuration["AppName"];
+            var key1 = configuration["infoObj:key1"];
+            var key2 = configuration["infoObj:key2"];
+            var key3 = configuration["infoObj:key3:key3obj1"];
             return View();
         }
    
