@@ -28,11 +28,35 @@ namespace Webgentle.BookStore.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
         [Route("~/all-books")]
+        //public async Task<ViewResult> Remove()
+        //{
+        //    var data = await _bookRepository.GetBookById();
+        //    return View(data);
+        //}
         public async Task<ViewResult> GetAllBooks()
         {
+
             var data = await _bookRepository.GetAllBooks();
             return View(data);
         }
+        //public async Task<List<BookModel>> DeleteBook(BookModel model)
+        //{
+        //    var books = new List<BookModel>();
+
+        //    foreach(var IdPost in model.Id.ToString())
+        //    {
+        //        books.Add(new BookModel()
+        //        {
+        //            Id = IdPost
+        //        });
+        //    }
+        //    var allbooks = await _context.Books.FirstOrDefaultAsync();
+
+        //    _context.Remove(allbooks);
+        //    _context.SaveChanges();
+        //    return books;
+        //}
+
         //public ViewResult GetBook(int id , string nameofbook)
         //{
         //    dynamic data = new ExpandoObject();
@@ -41,6 +65,14 @@ namespace Webgentle.BookStore.Controllers
         //    data.Name = "mohammad";
         //    return View(data);
         //}
+        [Route("~/book-Details/{id}", Name = "bookDetailsRoute")]
+        public ActionResult Delete()
+        {
+            
+            _bookRepository.GetId();
+            return Redirect();
+        }
+
         [Route("~/book-Details/{id}", Name = "bookDetailsRoute")]
         public async Task<ViewResult> GetBook(int id)
         {
@@ -53,29 +85,12 @@ namespace Webgentle.BookStore.Controllers
         }
         public async Task<ViewResult> AddnewBook(bool isSuccess = false, int bookId = 0)
         {
-            var model = new BookModel()
-            {
-                //Language = "2"
-            };
-            //ViewBag.Languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
-            //var Group1 = new SelectListGroup() { Name = "Group 1" };
-            //var Group2 = new SelectListGroup() { Name = "Group 2" };
-            //var Group3 = new SelectListGroup() { Name = "Group 3" };
-            //ViewBag.language = new List<SelectListItem>()
-            //{
-            //    new SelectListItem(){Text = "Hindi" , Value="1" , Group=Group1 },
-            //    new SelectListItem(){Text = "Persin" , Value="2", Group=Group1 },
-            //    new SelectListItem(){Text = "English" , Value="3", Group=Group1 },
-            //    new SelectListItem(){Text = "Ruassan" , Value="4", Group=Group2 },
-            //    new SelectListItem(){Text = "Trukish" , Value="5", Group=Group2 },
-            //     new SelectListItem(){Text = "Urdu" , Value="6" , Group=Group2},
-            //      new SelectListItem(){Text = "Chinese" , Value="7" , Group=Group3},
-            //       new SelectListItem(){Text = "Tamil" , Value="8" , Group=Group3},
-            //        new SelectListItem(){Text = "Spanish" , Value="9" , Group=Group3},
-            //};
+            var model = new BookModel();
+
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
+
             return View(model);
         }
         [HttpPost]

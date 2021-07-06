@@ -1,11 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using Webgentle.BookStore.Enums;
-using Webgentle.BookStore.Helper;
-using Microsoft.AspNetCore.Http;
 
 namespace Webgentle.BookStore.Models
 {

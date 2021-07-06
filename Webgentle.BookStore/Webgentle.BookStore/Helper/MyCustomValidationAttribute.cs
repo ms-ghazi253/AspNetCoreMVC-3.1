@@ -11,11 +11,11 @@ namespace Webgentle.BookStore.Helper
         public string Text { get; set; }
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if(value != null)
+            if (value != null)
             {
                 string booName = value.ToString();
-                if(booName.Contains(Text))
-                    {
+                if (booName.Contains(Text))
+                {
                     return ValidationResult.Success;
                 }
             }

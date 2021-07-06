@@ -56,6 +56,7 @@ namespace Webgentle.BookStore.Repository
             await _context.SaveChangesAsync();
             return newBook.Id;
         }
+    
         public async Task<List<BookModel>> GetAllBooks()
         {
             var books = new List<BookModel>();
@@ -117,10 +118,17 @@ namespace Webgentle.BookStore.Repository
                 }).ToList(),
                 BookPdfUrl = book.BookPdfUrl
             }).FirstOrDefaultAsync();
+        }
 
-
-
-
+        public async  Task<BookModel> GetId()
+        {
+            
+            var books =  new BookModel();
+            
+            var remove =  await _context.Books.FirstOrDefaultAsync(p=>p.Id==books.Id);
+            _context.Remove(remove);
+            _context.SaveChanges();
+            return books;
         }
         public string GetAppName()
         {

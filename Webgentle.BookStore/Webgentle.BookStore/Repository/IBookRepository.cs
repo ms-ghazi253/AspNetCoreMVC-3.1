@@ -9,6 +9,7 @@ namespace Webgentle.BookStore.Repository
         Task<int> AddnewBook(BookModel model);
         Task<List<BookModel>> GetAllBooks();
         Task<BookModel> GetBookById(int id);
+        Task<BookModel> GetId();
         Task<List<BookModel>> GetTopBooksAsync(int count);
         List<BookModel> SearchBook(string title, string authorName);
 
