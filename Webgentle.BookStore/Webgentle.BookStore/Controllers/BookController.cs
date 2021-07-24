@@ -65,12 +65,12 @@ namespace Webgentle.BookStore.Controllers
         //    data.Name = "mohammad";
         //    return View(data);
         //}
-        [Route("~/book-Details/{id}", Name = "bookDetailsRoute")]
+        //[Route("~/book-Details/{id}", Name = "bookDetailsRoute")]
         public ActionResult Delete()
         {
-            
+            var redirect = new RedirectResult("All-Books");
             _bookRepository.GetId();
-            return Redirect();
+            return redirect;
         }
 
         [Route("~/book-Details/{id}", Name = "bookDetailsRoute")]

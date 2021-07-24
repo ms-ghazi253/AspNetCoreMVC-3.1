@@ -24,10 +24,6 @@ namespace Webgentle.BookStore
             services.AddMvc();
             services.AddControllersWithViews();
             services.AddDbContext<BookStoreContext>(options => options.UseSqlServer(connectionString));
-            //services.AddRazorPages().AddRazorRuntimeCompilation().AddViewOptions(option =>
-            //{
-            //    option.HtmlHelperOptions.ClientValidationEnabled = false;
-            //});
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddScoped <IBookRepository , BookRepository >();
             services.AddScoped<ILanguageRepository, LanguageRepository>();
